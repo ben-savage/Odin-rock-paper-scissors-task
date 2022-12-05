@@ -17,7 +17,7 @@ const drawScissors = 'You both chose scissors and drew! Try again';
 const input = document.querySelector('.playerInput');
 const pageResponse = document.querySelector('.pageResponse');
 
-console.log(pageResponse);
+// console.log(pageResponse);
 
 function getComputerChoice(arr) {
     const computerNumber = Math.floor((Math.random() * arr.length));
@@ -27,7 +27,6 @@ function getComputerChoice(arr) {
  
     
  function comparison(cleanedPlayerSelection, computerSelection) {
-//  if (cleanedPlayerSelection = computerSelection) return drawStatement;
  if (cleanedPlayerSelection == rock) while (computerSelection == rock) return drawRock;
  if (cleanedPlayerSelection == paper) while (computerSelection == paper) return drawPaper;
  if (cleanedPlayerSelection == scissors) while (computerSelection == scissors) return drawScissors;
@@ -37,48 +36,46 @@ function getComputerChoice(arr) {
  if (cleanedPlayerSelection == rock) while (computerSelection == scissors) return loseRock;
  if (cleanedPlayerSelection == paper) while (computerSelection == rock) return winPaper;
  if (cleanedPlayerSelection == scissors) while (computerSelection == paper) return winScissors;
- // may need three draw statements. consider other way to write out so every permutation doesn't need a line of code
+ 
  }
 
  function cleanPlayerSelection(input) {
     return input.toLowerCase();
-    // if null return bad
+  
  }
 
-//  input.addEventListener
-//  const response = document.querySelector('.input');
 
-input.addEventListener('change', (event) => {
+input.addEventListener('keypress', (event) => {
+    /*
+        event listener for keypress
+        exits early if function key does not equal enter
+        makes player input to lowercase
+        if input isn't valid outputs error
+        else input is valid proceed
+        compares player input and computer input
+        outputs winner by updating pageResponse
+    */
+    if (event.code != 'Enter') {
+        return null;
+    } ;
+    
+    
     let playerSelection = event.target.value;
     let cleanedPlayerSelection = cleanPlayerSelection(playerSelection);
-    console.log(pageResponse);
-    //other answer for playerSelection to be 3 strings of accepted answers?
     
-    if (choices.includes(cleanedPlayerSelection)) {
-        let computerSelection = getComputerChoice(choices);
-        let cleanedPlayerSelection = cleanPlayerSelection(playerSelection);
-        console.log('4' + computerSelection);
-        pageResponse.textContent =`${comparison(cleanedPlayerSelection, computerSelection)}`;
-        console.log('5' + pageResponse);
-        console.log('6' + comparison(cleanedPlayerSelection, computerSelection));
+    
+    if (!choices.includes(cleanedPlayerSelection)) {
+        pageResponse.textContent = 'incorrect input, please use rock paper or scissors';
     }
     else {
-        pageResponse.textContent = 'incorrect input, please use rock paper or scissors';
+        let computerSelection = getComputerChoice(choices);
+        let cleanedPlayerSelection = cleanPlayerSelection(playerSelection);
+        pageResponse.textContent =`${comparison(cleanedPlayerSelection, computerSelection)}`;
     }});
- // pageResponse.textContent = 'test ${comparison(playerSelection, computerSelection)} !'
+
+  
  
- // add null to playerSelection
- // going to need to reset computer response on each round of choices (add query selector)
  // add a score keeper?
-
-//   playerSelection
-//   computerSelection
-//   input
-//pageResponse
-
-
-
-
-// needs updating to the response.
+// go from 9 statememnts to three by combining them having one win, one loss, one draw 
 
 
