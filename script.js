@@ -4,6 +4,9 @@ const rock = 'rock';
 const paper = 'paper';
 const scissors = 'scissors';
 
+var playerScore = 0;
+var computerScore = 0;
+
 //added 2 below variables as need a way to get computerSelection out of the function
 // const cleanedPlayerSelection = '';
 // const computerSelection = '';
@@ -22,6 +25,11 @@ const scissors = 'scissors';
 
 const input = document.querySelector('.playerInput');
 const pageResponse = document.querySelector('.pageResponse');
+const player = document.querySelector('.players');
+const computer = document.querySelector('.computers')
+
+player.textContent = `player score is ${playerScore}`;
+computer.textContent = `Computer score is ${computerScore}`;
 
 
 function getComputerChoice(arr) {
@@ -49,12 +57,19 @@ function getComputerChoice(arr) {
     // lose conditions
     if ((cleanedPlayerSelection == rock & computerSelection == scissors) 
     || (cleanedPlayerSelection == paper & computerSelection == scissors) 
-    || (cleanedPlayerSelection == scissors & computerSelection == paper)) return `Computer chose ${computerSelection}. \n You lost, ${computerSelection} beats ${cleanedPlayerSelection}`;
+    || (cleanedPlayerSelection == scissors & computerSelection == paper)) {
+        addComputerScore();
+        return `Computer chose ${computerSelection}. \n You lost, ${computerSelection} beats ${cleanedPlayerSelection}`
+    }
+     
     // win conditions
     if ((cleanedPlayerSelection == rock & computerSelection == paper)
     || (cleanedPlayerSelection == paper & computerSelection == rock)
-    || (cleanedPlayerSelection == scissors & computerSelection == paper)) return `Computer chose ${computerSelection}. \n congrats you won, ${cleanedPlayerSelection} beats ${computerSelection}`;
-     }
+    || (cleanedPlayerSelection == scissors & computerSelection == paper)) {
+        addPlayerScore();
+        return `Computer chose ${computerSelection}. \n Congratulations you won, ${cleanedPlayerSelection} beats ${computerSelection}`;
+    }
+    }
 
  function cleanPlayerSelection(input) {
     return input.toLowerCase();
@@ -97,10 +112,34 @@ function game(win, lose) {
     if (playRound == win) return playerScore +'1';
     if (playRound == lose) return computerScore + '1';
 }
-// function to increase player score 1
-// function to increase computer score 1
-// call both functions from within playround
-//function to compare scores if score = 5, game = over
+
+function addPlayerScore () {
+playerScore = ++playerScore;
+player.textContent = `player score is ${playerScore}`;
+// winner(playerScore, ComputerScore)
+}
+
+function addComputerScore () {
+computerScore = ++computerScore ;
+computer.textContent = `Computer score is ${computerScore}`;
+// winner(playerScore, ComputerScore)
+}
+
+// function winner(playerScore, ComputerScore) {
+//     if (playerScore == 5) alert('player wins!'),
+//     playerScore = 0
+//     computerScore = 0
+//     if (computerScore == 5) alert('computer wins!')
+//     playerScore = 0
+//     computerScore = 0
+// }
+
+
+
+// function to increase player score 1 DONE
+// function to increase computer score 1 DONE
+// call both functions from within playround DONE
+//function to compare scores if score = 5, game = over TO DO
 
     // for (let i = 0; i < 5; i++) {
     //    let i = playerScore;
