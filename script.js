@@ -7,26 +7,11 @@ const scissors = 'scissors';
 var playerScore = 0;
 var computerScore = 0;
 
-//added 2 below variables as need a way to get computerSelection out of the function
-// const cleanedPlayerSelection = '';
-// const computerSelection = '';
-
-
-
-// const loseRock = 'You lost, paper beats your rock.';
-// const losePaper = 'You lost, scissors beats your paper.';
-// const loseScissors = 'You lost, rock beats your scissors.';
-// const winRock = 'Congratulations! You win, rock beats scissors.';
-// const winPaper = 'Congratulations! You win, paper beats rock.';
-// const winScissors = 'Congratulations! You win, scissors beats paper.';
-// const drawRock = 'You both chose rock and drew! Try again.';
-// const drawPaper = 'You both chose paper and drew! Try again.';
-// const drawScissors = 'You both chose scissors and drew! Try again.';
-
 const input = document.querySelector('.playerInput');
 const pageResponse = document.querySelector('.pageResponse');
 const player = document.querySelector('.players');
 const computer = document.querySelector('.computers')
+const endGame = document.querySelector('.endGame')
 
 player.textContent = `player score is ${playerScore}`;
 computer.textContent = `Computer score is ${computerScore}`;
@@ -38,19 +23,6 @@ function getComputerChoice(arr) {
     return computerSelection;
     }
  
-    
-//  function playRound(cleanedPlayerSelection, computerSelection) {
-//  if (cleanedPlayerSelection == rock) while (computerSelection == rock) return drawRock;
-//  if (cleanedPlayerSelection == paper) while (computerSelection == paper) return drawPaper;
-//  if (cleanedPlayerSelection == scissors) while (computerSelection == scissors) return drawScissors;
-//  if (cleanedPlayerSelection == rock) while (computerSelection == paper) return winRock;
-//  if (cleanedPlayerSelection == paper) while (computerSelection == scissors) return losePaper;
-//  if (cleanedPlayerSelection == scissors) while (computerSelection == paper) return loseScissors;
-//  if (cleanedPlayerSelection == rock) while (computerSelection == scissors) return loseRock;
-//  if (cleanedPlayerSelection == paper) while (computerSelection == rock) return winPaper;
-//  if (cleanedPlayerSelection == scissors) while (computerSelection == paper) return winScissors;
- // }
-
   function playRound(cleanedPlayerSelection, computerSelection) {
     // draw conditions
     if (cleanedPlayerSelection == computerSelection) return `Computer chose ${cleanedPlayerSelection}. \n You drew, try again!`;
@@ -107,49 +79,37 @@ input.addEventListener('keypress', (event) => {
     }});
  
     //function just added needs writing properly
-function game(win, lose) {
-    playRound;
-    if (playRound == win) return playerScore +'1';
-    if (playRound == lose) return computerScore + '1';
-}
+// function game(win, lose) {
+//     playRound;
+//     if (playRound == win) return playerScore +'1';
+//     if (playRound == lose) return computerScore + '1';
+// }
 
 function addPlayerScore () {
 playerScore = ++playerScore;
 player.textContent = `player score is ${playerScore}`;
-// winner(playerScore, ComputerScore)
+winner(playerScore, computerScore)
 }
 
 function addComputerScore () {
 computerScore = ++computerScore ;
 computer.textContent = `Computer score is ${computerScore}`;
-// winner(playerScore, ComputerScore)
+winner(playerScore, computerScore)
 }
 
-// function winner(playerScore, ComputerScore) {
-//     if (playerScore == 5) alert('player wins!'),
-//     playerScore = 0
-//     computerScore = 0
-//     if (computerScore == 5) alert('computer wins!')
-//     playerScore = 0
-//     computerScore = 0
-// }
-
+function winner(playerScore, computerScore) {
+    if (playerScore == 5) {alert ('player wins!');
+    var playerScore = 0;
+    var computerScore = 0};
+    if (computerScore == 5) {
+    alert ('computer wins!');
+    var playerScore = 0;
+    var computerScore = 0;
+};
+}
 
 
 // function to increase player score 1 DONE
 // function to increase computer score 1 DONE
 // call both functions from within playround DONE
 //function to compare scores if score = 5, game = over TO DO
-
-    // for (let i = 0; i < 5; i++) {
-    //    let i = playerScore;
-    //    let i = computerScore
-    //    game()
-    //  }
-
-
- // add a score keeper?
-// go from 9 statememnts to three by combining them having one win, one loss, one draw
-// Issue with reducing is that string computerSelection and cleanedPlayerSelection are in the function and aren't listed externally
-
-
