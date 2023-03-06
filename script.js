@@ -27,14 +27,14 @@ function getComputerChoice(arr) {
     // draw conditions
     if (cleanedPlayerSelection == computerSelection) return `Computer chose ${cleanedPlayerSelection}. \n You drew, try again!`;
     // lose conditions
-    if ((cleanedPlayerSelection == rock & computerSelection == scissors) 
+    if ((cleanedPlayerSelection == rock & computerSelection == paper) 
     || (cleanedPlayerSelection == paper & computerSelection == scissors) 
-    || (cleanedPlayerSelection == scissors & computerSelection == paper)) {
+    || (cleanedPlayerSelection == scissors & computerSelection == rock)) {
         addComputerScore();
         return `Computer chose ${computerSelection}. \n You lost, ${computerSelection} beats ${cleanedPlayerSelection}`
     }
     // win conditions
-    if ((cleanedPlayerSelection == rock & computerSelection == paper)
+    if ((cleanedPlayerSelection == rock & computerSelection == scissors)
     || (cleanedPlayerSelection == paper & computerSelection == rock)
     || (cleanedPlayerSelection == scissors & computerSelection == paper)) {
         addPlayerScore();
@@ -79,7 +79,7 @@ playerScore = scoreArray[0];
 computerScore = scoreArray[1];
 player.textContent = `player score is ${playerScore}`;
 computer.textContent = `Computer score is ${computerScore}`;
-}
+}paper
 
 function addComputerScore () {
 computerScore = ++computerScore ;
