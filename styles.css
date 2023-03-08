@@ -1,0 +1,61 @@
+
+body {
+    max-width:  1800px;
+    color: blue;
+}
+
+body.button {
+    border: none;
+    cursor: pointer;
+}
+
+.header {
+    margin-top: 80px;
+    font-size: 45px;
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+}
+
+.welcome2 {
+    display: flex;
+    justify-content: center;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+.roundResponse {
+    display: flex;
+    justify-content: center;
+}
+.score {
+    display: flex;
+    justify-content: center;
+}
+
+.computers { margin-left: 20px;}
+
+
+
+/* head-1 */
+
+
+/* para-1 */
+
+.btnr {
+ font-size: 45px;
+}
+
+.btnp {
+ font-size: 45px;
+ margin-left: 80px;
+ margin-right: 80px;
+}
+
+.btns {
+font-size: 45px;
+}
