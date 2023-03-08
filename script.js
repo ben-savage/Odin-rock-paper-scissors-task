@@ -7,7 +7,16 @@ const scissors = 'scissors';
 var playerScore = 0;
 var computerScore = 0;
 
-const input = document.querySelector('.playerInput');
+//FORADDINGBUTTONS
+// Add reference to buttons on playerSelection
+//change addEventListener from enter key to button press of R, P or S
+//Put formatting on whole page
+
+
+const rockBtn = document.getElementById('rockBtn')
+const paperBtn = document.getElementById('paperBtn')
+const scissorsBtn = document.getElementById('scissorsBtn')
+// const input = document.querySelector('.playerInput');
 const pageResponse = document.querySelector('.pageResponse');
 const player = document.querySelector('.players');
 const computer = document.querySelector('.computers')
@@ -41,37 +50,56 @@ function getComputerChoice(arr) {
         return `Computer chose ${computerSelection}. \n Congratulations you won, ${cleanedPlayerSelection} beats ${computerSelection}`;
     }
     }
-    // makes player input to lower case
- function cleanPlayerSelection(input) {
-    return input.toLowerCase();
-}
+    // makes player input to lower case, used in input bar when no buttons
+//  function cleanPlayerSelection(input) {
+//     return input.toLowerCase();
+// }
 
+//new addEventListener for R, P, S
+rockBtn.addEventListener('click', () => handleClick('rock'));
+paperBtn.addEventListener('click', () => handleClick('paper'));
+scissorsBtn.addEventListener('click', () => handleClick('scissors'));
 
-input.addEventListener('keypress', (event) => {
+function handleClick(playerSelection) {
     /*
-        event listener for keypress
-        exits early if function key does not equal enter
-        makes player input to lowercase
-        if input isn't valid outputs error
-        else input is valid proceed
-        plays round comparing player input and computer input
-        outputs winner by updating pageResponse
+    1. Takes user input of rock paper or scissors based on button pressed
+    2. gets computer selection
+    3. call playRound
     */
-    if (event.code != 'Enter') {
-        return null;
-    } ;
-    let playerSelection = event.target.value;
-    let cleanedPlayerSelection = cleanPlayerSelection(playerSelection);
-    
-    if (!choices.includes(cleanedPlayerSelection)) {
-        pageResponse.textContent = 'incorrect input, please use rock paper or scissors';
+    cleanedPlayerSelection = playerSelection
+    let computerSelection = getComputerChoice(choices);
+    pageResponse.textContent =`${playRound(cleanedPlayerSelection, computerSelection)}`;
     }
-    else {
-        let computerSelection = getComputerChoice(choices);
-        let cleanedPlayerSelection = cleanPlayerSelection(playerSelection);
-        pageResponse.textContent =`${playRound(cleanedPlayerSelection, computerSelection)}`;
-    }});
+
+// input.addEventListener('click', (event) => {
+//     /*
+//         event listener for keypress
+//         exits early if function key does not equal click
+//         makes player input to lowercase
+//         if input isn't valid outputs error
+//         else input is valid proceed
+//         plays round comparing player input and computer input
+//         outputs winner by updating pageResponse
+//     */
+//     if (event.code != 'click') {
+//         return null;
+//     } ;
+//     let playerSelection = event.target.value; // edit event.target.value
+//     // let cleanedPlayerSelection = cleanPlayerSelection(playerSelection);
+    
+//     // if statement now not needed
+//     // if (!choices.includes(cleanedPlayerSelection)) {
+//     //     pageResponse.textContent = 'incorrect input, please use rock paper or scissors';
+//     // }
+//         let computerSelection = getComputerChoice(choices);
+//         handleClick(playerSelection);
+//         pageResponse.textContent =`${playRound(cleanedPlayerSelection, computerSelection)}`;
+//     });
  //adds on increment of playerScore
+
+
+
+
 function addPlayerScore () {
 playerScore = ++playerScore;
 scoreArray = winner(playerScore, computerScore)
