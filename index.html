@@ -7,8 +7,11 @@
     <title>Rock, paper, scissors</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+<!-- Add glow or effect to buttons on hover -->
+<!-- Add background to paper -->
 
 <body>
+    <div class="body">
     <div class="header">
         <div class="welcome">
             <h class="head-1"> Welcome to Rock Paper Scissors.</h>
@@ -21,13 +24,13 @@
     </div>
     <div class="buttons">
         <div class="rock">
-            <button id="rockBtn" class="btnr"> ROCK </button>
+            <button id="rockBtn" class="btnr"> <img src="images/rock.png" class="rockImg">  </button>
         </div>
         <div class="paper">
-            <button id="paperBtn" class="btnp"> PAPER </button>
+            <button id="paperBtn" class="btnp"> <img src="images/paper.png" class="paperImg"> </button>
         </div>
         <div class="scissors">
-            <button id="scissorsBtn" class="btns"> SCISSORS</button>
+            <button id="scissorsBtn" class="btns"> <img src="images/scissors.png" class="scissorsImg"> </button>
         </div>
     </div>
     <br>
@@ -39,6 +42,7 @@
     <p3 class="players"> </p3>
     <p4 class="computers"> </p4>
     <p5 class="endGame"> </p5>
+    </div>
     </div>
     <script src="script.js"> </script>
 </body>

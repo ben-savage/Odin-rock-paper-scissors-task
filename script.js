@@ -105,7 +105,7 @@ playerScore = ++playerScore;
 scoreArray = winner(playerScore, computerScore)
 playerScore = scoreArray[0];
 computerScore = scoreArray[1];
-player.textContent = `player score is ${playerScore}`;
+player.textContent = `Player score is ${playerScore}`;
 computer.textContent = `Computer score is ${computerScore}`;
 }paper
 
@@ -115,7 +115,7 @@ scoreArray = winner(playerScore, computerScore)
 playerScore = scoreArray[0];
 computerScore = scoreArray[1];
 computer.textContent = `Computer score is ${computerScore}`;
-player.textContent = `player score is ${playerScore}`;
+player.textContent = `Player score is ${playerScore}`;
 }
 
 function winner(playerScore, computerScore) {
