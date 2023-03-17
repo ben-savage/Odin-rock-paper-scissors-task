@@ -102,39 +102,63 @@ function handleClick(playerSelection) {
 
 function addPlayerScore () {
 playerScore = ++playerScore;
-scoreArray = winner(playerScore, computerScore)
+scoreArray = winner(playerScore, computerScore);
+scoreArray = resetScore(playerScore, computerScore);
 playerScore = scoreArray[0];
 computerScore = scoreArray[1];
+
 player.textContent = `Player score is ${playerScore}`;
 computer.textContent = `Computer score is ${computerScore}`;
-}paper
+// if (playerScore < 5 || computerScore < 5)
+}
 
 function addComputerScore () {
 computerScore = ++computerScore ;
-scoreArray = winner(playerScore, computerScore)
+scoreArray = winner(playerScore, computerScore);
+scoreArray = resetScore(playerScore, computerScore);
 playerScore = scoreArray[0];
 computerScore = scoreArray[1];
+
 computer.textContent = `Computer score is ${computerScore}`;
 player.textContent = `Player score is ${playerScore}`;
 }
 
-function winner(playerScore, computerScore) {
+function resetScore(playerScore, computerScore) {
     // if(playerScore < 5 || computerScore < 5) {
     if (playerScore === 5) {
-     alert ('player wins!');
+        alert ('player wins!');
      playerScore = 0;
      computerScore = 0;
      return [playerScore, computerScore]
      }
     if (computerScore === 5) {
-     alert ('computer wins!');
+    //  computer.textContent = `Computer score is ${computerScore}`;
+    
      playerScore = 0;
      computerScore = 0;
      return [playerScore, computerScore]
      };
+     
      return [playerScore, computerScore]
     // else if }
     }
+
+    function winner (playerScore, computerScore) {
+        if (playerScore === 5) { 
+            playerScore = 5;
+            console.log(playerScore)
+        return player.textContent = `Player score is ${playerScore}`;
+                
+        }
+        if (computerScore === 5) {
+            computerScore = 5;
+            console.log(computerScore)
+            return computer.textContent = `Computer score is ${computerScore}`;
+               
+        }
+    }
+
+   
 
 
 // function to increase player score 1 DONE

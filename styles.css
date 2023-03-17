@@ -48,7 +48,14 @@ body.button {
 
 /* para-1 */
 
-.btnr {
+.btnR:hover{
+    transform: scale(1.05);
+    border-width: 3px;
+    margin-bottom: -2px;
+    background-color: chocolate;
+}
+
+.btnR {
  font-size: 45px;
  border-radius: 15px;
  width: 250px;
@@ -56,14 +63,20 @@ body.button {
  background-color:gold;
  padding-top:20px;
  padding-bottom: 20px;
- }
+}
 
  .rockImg {
     width:200px;
     height:200px;
  }
 
-.btnp {
+ .btnP:hover{
+    transform: scale(1.05);
+    border-width: 3px;
+    margin-bottom: -2px;
+    background-color: chocolate;
+}
+.btnP {
  font-size: 45px;
  margin-left: 80px;
  margin-right: 80px;
@@ -80,7 +93,14 @@ body.button {
     height:200px;
 }
 
-.btns {
+.btnS:hover{
+    transform: scale(1.05);
+    border-width: 3px;
+    margin-bottom: -2px;
+    background-color: chocolate;
+}
+
+.btnS {
 font-size: 45px;
 border-radius: 15px;
 width: 250px;
