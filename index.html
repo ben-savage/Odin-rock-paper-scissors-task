@@ -3,26 +3,47 @@
 <!DOCTYPE HTML>
 
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Rock, paper, scissors</title>
-    <link rel="stylesheet" />
-    <title> Rock paper scissors </title>
-
+    <link rel="stylesheet" href="styles.css">
 </head>
 
+
 <body>
-    <h> Welcome to Rock Paper Scissors.</h>
+    <div class="body">
+    <div class="header">
+        <div class="welcome">
+            <h class="head-1"> Welcome to Rock Paper Scissors.</h>
+            <br>
+        </div>
+        <div class="welcome2">
+            <p1 class="para-1"> Enter your choice here </p1>
+            <br>
+        </div>
+    </div>
+    <div class="buttons">
+        <div class="rock">
+            <button id="rockBtn" class="btnR"> <img src="images/rock.png" class="rockImg">  </button>
+        </div>
+        <div class="paper">
+            <button id="paperBtn" class="btnP"> <img src="images/paper.png" class="paperImg"> </button>
+        </div>
+        <div class="scissors">
+            <button id="scissorsBtn" class="btnS"> <img src="images/scissors.png" class="scissorsImg"> </button>
+        </div>
+    </div>
     <br>
-    <p1> Enter your choice here </p1>
-    <br>
-    <input class="playerInput" type="text"> </input>
-    <br>
+    <div class="roundResponse">
     <h2 class="pageResponse"> </h2>
-     <!-- <p2 class="pageResponse"></p2> -->
+    </div>
+    <!-- <p2 class="pageResponse"></p2> -->
+    <div class="score">
     <p3 class="players"> </p3>
     <p4 class="computers"> </p4>
     <p5 class="endGame"> </p5>
-    <script src="script.js"> </script> 
+    </div>
+    </div>
+    <script src="script.js"> </script>
 </body>
 
 <!-- -->
